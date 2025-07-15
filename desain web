@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tukar USDT / TRX ke IDR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Header -->
+  <header class="bg-purple-900 p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">TukarCrypto.id</h1>
+    <nav class="space-x-4">
+      <a href="#layanan" class="hover:underline">Layanan</a>
+      <a href="#tentang" class="hover:underline">Tentang</a>
+      <a href="#kontak" class="hover:underline">Kontak</a>
+    </nav>
+  </header>  <!-- Hero Banner -->  <section class="text-center py-10 bg-gradient-to-b from-purple-800 to-black">
+    <h2 class="text-3xl font-semibold">Tukar USDT / TRX ke Rupiah dengan Mudah</h2>
+    <p class="mt-2 text-gray-300">Layanan cepat, otomatis, dan terpercaya 24 jam</p>
+  </section>  <!-- Layanan Section -->  <section id="layanan" class="py-10 px-4 max-w-4xl mx-auto">
+    <h3 class="text-2xl font-bold mb-6">Layanan Kami</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- USDT to IDR -->
+      <div class="bg-purple-800 p-6 rounded-xl shadow-md">
+        <h4 class="text-xl font-semibold mb-2">Tukar USDT ke IDR</h4>
+        <p class="text-sm text-gray-300 mb-4">Masukkan jumlah dan kirim ke wallet kami. Sistem kami akan otomatis memproses transaksi Anda.</p>
+        <button class="bg-black px-4 py-2 rounded hover:bg-gray-900">Tukar Sekarang</button>
+      </div><!-- TRX to IDR -->
+  <div class="bg-purple-800 p-6 rounded-xl shadow-md">
+    <h4 class="text-xl font-semibold mb-2">Tukar TRX ke IDR</h4>
+    <p class="text-sm text-gray-300 mb-4">Kami menerima penukaran TRX dengan rate real-time dan pengiriman cepat ke rekening Anda.</p>
+    <button class="bg-black px-4 py-2 rounded hover:bg-gray-900">Tukar Sekarang</button>
+  </div>
+</div>
+
+  </section>  <!-- Tentang Section -->  <section id="tentang" class="py-10 px-4 max-w-4xl mx-auto text-center">
+    <h3 class="text-2xl font-bold mb-4">Tentang Kami</h3>
+    <p class="text-gray-400">Kami adalah platform penukaran kripto ke rupiah yang terpercaya. Sistem otomatis kami memastikan transaksi Anda cepat dan aman tanpa ribet.</p>
+  </section>  <!-- Kontak Section -->  <section id="kontak" class="py-10 px-4 max-w-4xl mx-auto text-center">
+    <h3 class="text-2xl font-bold mb-4">Hubungi Kami</h3>
+    <p class="text-gray-400">Jika ada pertanyaan atau kendala, hubungi kami melalui WhatsApp: <a href="https://wa.me/628xxxxxxxxxx" class="text-purple-400 underline">Klik di sini</a></p>
+  </section>  <!-- Footer -->  <footer class="bg-purple-900 text-center p-4 text-sm text-gray-200">
+    &copy; 2025 TukarCrypto.id - All rights reserved.
+  </footer>
+</body>
+</html>
