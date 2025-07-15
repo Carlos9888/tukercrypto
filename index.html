@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TukerCrypto.com</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white font-sans">
- 
-<!-- Header -->
-<header class="bg-purple-900 p-4 flex justify-between items-center flex-wrap">
-  <h1 class="text-xl font-bold text-white">TukerCrypto.com</h1>
 
-  <!-- Navigasi -->
-  <div class="flex items-center space-x-4 text-sm md:text-base flex-wrap">
-    <a href="#beranda" class="hover:underline text-white">Beranda</a>
-    <a href="#cekpesanan" class="hover:underline text-white">Cek Pesanan</a>
-    <a href="#kalkulator" class="hover:underline text-white">Kalkulator</a>
-    <a href="#tabelharga" class="hover:underline text-white">Tabel Harga</a>
-    <a href="#layanan" class="hover:underline text-white">Layanan</a>
-    <a href="#tentang" class="hover:underline text-white">Tentang</a>
-    <a href="#kontak" class="hover:underline text-white">Kontak</a>
+  <!-- ✅ HEADER -->
+  <header class="bg-purple-900 p-4 relative z-10">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="https://assets.coingecko.com/coins/images/325/large/Tether.png" alt="Logo" class="w-8 h-8 rounded-full">
+        <h1 class="text-xl font-bold text-white">TukerCrypto.com</h1>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm md:text-base">
+        <a href="#beranda" class="hover:underline">Beranda</a>
+        <a href="#cekpesanan" class="hover:underline">Cek Pesanan</a>
+        <a href="#kalkulator" class="hover:underline">Kalkulator</a>
+        <a href="#tabelharga" class="hover:underline">Tabel Harga</a>
+        <a href="#layanan" class="hover:underline">Layanan</a>
+        <a href="#tentang" class="hover:underline">Tentang</a>
+        <a href="#kontak" class="hover:underline">Kontak</a>
+        <a href="#login" class="bg-black px-3 py-1 rounded hover:bg-gray-800">Log In</a>
+        <a href="#signup" class="bg-purple-700 px-3 py-1 rounded hover:bg-purple-600">Sign Up</a>
+      </nav>
+
+      <!-- ☰ Button (Mobile) -->
+      <button class="md:hidden text-white text-3xl" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- ✅ SLIDE MENU MOBILE -->
+  <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-purple-900 z-50 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-6">
+    <div>
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button onclick="toggleMenu()" class="text-2xl text-white">✕</button>
+      </div>
+      <nav class="space-y-4">
+        <a href="#beranda" class="block hover:underline">Beranda</a>
+        <a href="#cekpesanan" class="block hover:underline">Cek Pesanan</a>
+        <a href="#kalkulator" class="block hover:underline">Kalkulator</a>
+        <a href="#tabelharga" class="block hover:underline">Tabel Harga</a>
+        <a href="#layanan" class="block hover:underline">Layanan</a>
+        <a href="#tentang" class="block hover:underline">Tentang</a>
+        <a href="#kontak" class="block hover:underline">Kontak</a>
+      </nav>
+    </div>
+    <div class="space-y-2">
+      <a href="#login" class="bg-black text-white px-4 py-2 rounded text-center block">Log In</a>
+      <a href="#signup" class="bg-purple-700 text-white px-4 py-2 rounded text-center block">Sign Up</a>
+    </div>
   </div>
 
-  <!-- Tombol Login & Sign Up -->
-  <div class="mt-3 md:mt-0 flex space-x-3">
-    <a href="#login" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
-      Log In
-    </a>
-    <a href="#signup" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-600 transition">
-      Sign Up
-    </a>
-  </div>
-</header>
+  <!-- ✅ TOGGLE SCRIPT -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("translate-x-full");
+    }
+  </script>
+
+
+
+
 
 <!-- Hero Banner -->
 <section class="text-center py-10 bg-gradient-to-b from-purple-800 to-black">
@@ -55,39 +91,40 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
   <!-- USDT (TRC20) -->
-      <div class="bg-purple-800 p-4 rounded-xl shadow-md">
+      <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
      <img src="https://assets.coingecko.com/coins/images/325/large/Tether.png" alt="USDT " class="w-full h-32 object-contain rounded-lg mb-3">
         <h4 class="text-lg font-semibold mb-1">USDT</h4>
         <p class="text-sm text-gray-300 mb-2">Penukaran cepat dan aman ke rekening lokal Anda.</p>
         <button class="bg-black px-4 py-2 rounded hover:bg-gray-900">Tukar Sekarang</button>
       </div>
-      
-      <!-- SOL / USDC -->
-      <div class="bg-purple-800 p-4 rounded-xl shadow-md">
-        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC" class="w-full h-32 object-contain rounded-lg mb-3">
-        <h4 class="text-lg font-semibold mb-1">SOL / USDC</h4>
+
+      <!-- SOLANA  -->
+      <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+       <img src="https://github.com/Carlos9888/tukercrypto/blob/main/solana-sol-logo.png?raw=true" alt="Solana" class="w-full h-32 object-contain rounded-lg mb-3">
+        <h4 class="text-lg font-semibold mb-1">SOLANA </h4>
         <p class="text-sm text-gray-300 mb-2">Tersedia untuk Solana network, real-time rate.</p>
         <button class="bg-black px-4 py-2 rounded hover:bg-gray-900">Tukar Sekarang</button>
       </div>
 
       <!-- TRX -->
-      <div class="bg-purple-800 p-4 rounded-xl shadow-md">
-        <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRX" class="w-full h-32 object-contain rounded-lg mb-3">
+     <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+        <img src="https://raw.githubusercontent.com/Carlos9888/tukercrypto/aeec4754a97fd964d27ff4fe61bcf5eab2d0161b/tron-trx-logo-full.svg" alt="TRX" class="w-full h-32 object-contain rounded-lg mb-3">
         <h4 class="text-lg font-semibold mb-1">TRX</h4>
         <p class="text-sm text-gray-300 mb-2">Penukaran TRX cepat langsung ke rekening Anda.</p>
         <button class="bg-black px-4 py-2 rounded hover:bg-gray-900">Tukar Sekarang</button>
       </div>
 
-      <!-- MATIC / USDT -->
-      <div class="bg-purple-800 p-4 rounded-xl shadow-md">
-        <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="MATIC" class="w-full h-32 object-contain rounded-lg mb-3">
-        <h4 class="text-lg font-semibold mb-1">MATIC / USDT</h4>
-        <p class="text-sm text-gray-300 mb-2">Layanan penukaran jaringan Polygon dengan USDT.</p>
-        <button class="bg-black px-4 py-2 rounded hover:bg-gray-900">Tukar Sekarang</button>
-      </div>
+      <!-- TRON / USDT -->
+<div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+  <img src="https://github.com/Carlos9888/tukercrypto/blob/main/toncoin-ton-logo.png?raw=true" alt="TRON" class="w-full h-32 object-contain rounded-lg mb-3">
+  <h4 class="text-lg font-semibold mb-1 text-white">TRON / USDT</h4>
+  <p class="text-sm text-gray-300 mb-2">Penukaran TRON melalui jaringan TRC20 secara otomatis.</p>
+  <button class="bg-black px-4 py-2 rounded hover:bg-gray-900 text-white">Tukar Sekarang</button>
+</div>
+
 
       <!-- BUSD / USDT (BSC) -->
-      <div class="bg-purple-800 p-4 rounded-xl shadow-md">
+     <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
         <img src="https://cryptologos.cc/logos/binance-usd-busd-logo.png" alt="BUSD" class="w-full h-32 object-contain rounded-lg mb-3">
         <h4 class="text-lg font-semibold mb-1">BUSD / USDT</h4>
         <p class="text-sm text-gray-300 mb-2">Tersedia via jaringan Binance Smart Chain.</p>
