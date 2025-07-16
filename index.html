@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TukerCrypto.com</title>
   <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html {
+    scroll-behavior: auto;
+  }
+</style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-sans" data-scroll>
+
 
   <!-- ✅ HEADER -->
-  <header class="bg-purple-900 p-4 relative z-10">
+  <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md p-4">
     <div class="flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center space-x-2">
@@ -17,11 +23,15 @@
         <h1 class="text-xl font-bold text-white">TukerCrypto.com</h1>
       </div>
 
+
+     <section
+
+
+
       <!-- Desktop Menu -->
       <nav class="hidden md:flex items-center space-x-4 text-sm md:text-base">
         <a href="#beranda" class="hover:underline">Beranda</a>
         <a href="#cekpesanan" class="hover:underline">Cek Pesanan</a>
-        <a href="#kalkulator" class="hover:underline">Kalkulator</a>
         <a href="#tabelharga" class="hover:underline">Tabel Harga</a>
         <a href="#layanan" class="hover:underline">Layanan</a>
         <a href="#tentang" class="hover:underline">Tentang</a>
@@ -45,7 +55,6 @@
       <nav class="space-y-4">
         <a href="#beranda" class="block hover:underline">Beranda</a>
         <a href="#cekpesanan" class="block hover:underline">Cek Pesanan</a>
-        <a href="#kalkulator" class="block hover:underline">Kalkulator</a>
         <a href="#tabelharga" class="block hover:underline">Tabel Harga</a>
         <a href="#layanan" class="block hover:underline">Layanan</a>
         <a href="#tentang" class="block hover:underline">Tentang</a>
@@ -68,126 +77,133 @@
 
 
 
+ <!-- Hero Chart Section -->
+<section id="beranda" class="pt-28 bg-black py-10 px-4 md:px-10 text-center">
+  <h2 class="text-lg md:text-3xl font-semibold text-white mb-6 leading-snug">
+    Tukar USDT ⇆ IDR dari <span class="text-purple-400">Berbagai Exchange</span> <br>
+    <span class="text-blue-400">Convert langsung ke rekening, atau beli USDT dikirim ke wallet kamu</span>
+  </h2>
 
-
-<!-- Hero Banner -->
-<section class="text-center py-10 bg-gradient-to-b from-purple-800 to-black">
- <h2 class="text-[13px] md:text-3xl font-semibold text-white">
-MULAI 1$ SUDAH BISA
-  <span class="bg-gradient-to-r from-purple-400 via-blue-500 to-blue-400 bg-clip-text text-transparent">
-   jual maupun beli crypto langsung cair!
-  </span>
-</h2>
-  <p class="text-sm md:text-3xl bg-gradient-to-r from-purple-400 via-blue-500 to-blue-400 bg-clip-text text-transparent">
-    Layanan cepat, otomatis, dan terpercaya 24 jam
-  </p>
+  <div class="flex justify-center">
+    <div class="border border-purple-500 p-2 rounded-xl w-full max-w-md md:max-w-3xl">
+      <img 
+        src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/banner.jpg?raw=true" 
+        alt="Chart Aset Terbaik" 
+        class="w-full rounded-md shadow-lg"
+      >
+    </div>
+  </div>
 </section>
+ 
 
 
 
 
- <!-- Layanan Section -->
+
+<!-- Layanan Section -->
 <section id="layanan" class="py-10 px-4 max-w-6xl mx-auto">
   <h3 class="text-2xl font-bold mb-6">Layanan Kami</h3>
+  <div class="grid grid-cols-2 gap-2 md:gap-6">
 
-  <div class="grid grid-cols-3 gap-2 md:gap-6">
 
-    <!-- USDT -->
+  <!-- INDODAX USDT -->
     <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://assets.coingecko.com/coins/images/325/large/Tether.png" alt="USDT" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">USDT</h4>
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/indodax-usdt-v2.jpg?raw=true" alt="USDT" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">INDODAX USDT</h4>
       <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
+        <button class="text-xs md:text-sm font-semibold px-3 md:px-5 py-1 md:py-2 rounded-lg text-center transition 
+  bg-gradient-to-b from-purple-500 to-purple-700 
+  shadow-[inset_0_-4px_6px_rgba(0,0,0,0.5)] border border-purple-500 hover:opacity-90">
+  Tukar Sekarang
+</button>
       </div>
     </div>
 
-    <!-- SOLANA -->
+    <!-- BINANCE USDT -->
     <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/solana-sol-logo.png?raw=true" alt="Solana" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">SOLANA</h4>
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/BINANCE.jpg?raw=true" alt="Solana" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BINANCE USDT</h4>
       <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
+        <button class="text-xs md:text-sm font-semibold px-3 md:px-5 py-1 md:py-2 rounded-lg text-center transition 
+  bg-gradient-to-b from-purple-500 to-purple-700 
+  shadow-[inset_0_-4px_6px_rgba(0,0,0,0.5)] border border-purple-500 hover:opacity-90">
+  Tukar Sekarang
+</button>
       </div>
     </div>
 
-    <!-- TRX -->
+
+    <!-- BITGET USDT -->
     <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://raw.githubusercontent.com/Carlos9888/tukercrypto/aeec4754a97fd964d27ff4fe61bcf5eab2d0161b/tron-trx-logo-full.svg" alt="TRX" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">TRX</h4>
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/BITGET.jpg?raw=true" alt="TRX" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BITGET USDT</h4>
       <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
+        <button class="text-xs md:text-sm font-semibold px-3 md:px-5 py-1 md:py-2 rounded-lg text-center transition 
+  bg-gradient-to-b from-purple-500 to-purple-700 
+  shadow-[inset_0_-4px_6px_rgba(0,0,0,0.5)] border border-purple-500 hover:opacity-90">
+  Tukar Sekarang
+</button>
       </div>
     </div>
 
-    <!-- TON -->
+    <!-- BYBIT USDT -->
     <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/toncoin-ton-logo.png?raw=true" alt="TON" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">TON</h4>
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/BYBIT.jpg?raw=true" alt="TON" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BYBIT USDT</h4>
       <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
+        <button class="text-xs md:text-sm font-semibold px-3 md:px-5 py-1 md:py-2 rounded-lg text-center transition 
+  bg-gradient-to-b from-purple-500 to-purple-700 
+  shadow-[inset_0_-4px_6px_rgba(0,0,0,0.5)] border border-purple-500 hover:opacity-90">
+  Tukar Sekarang
+</button>
       </div>
     </div>
 
-    <!-- BNB -->
-    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/bnb-bnb-logo.png?raw=true" alt="BNB" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BNB</h4>
-      <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
-      </div>
-    </div>
-
-    <!-- USDC -->
-    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/usd-coin-usdc-logo.png?raw=true" alt="USDC" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">USDC</h4>
-      <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
-      </div>
-    </div>
-
-    <!-- SUI -->
-    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
-      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/sui-sui-logo.png?raw=true" alt="SUI" class="w-full h-32 object-contain rounded-lg mb-3">
-      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">SUI</h4>
-      <div class="flex justify-center">
-        <button class="text-xs md:text-sm bg-black border border-purple-600 text-white px-3 md:px-4 py-2 rounded hover:bg-gray-900 transition whitespace-nowrap">
-          Tukar Sekarang
-        </button>
-      </div>
-    </div>
+   
 
   </div>
 </section>
 
 
   <!-- Tentang Section -->
-  <section id="tentang" class="py-10 px-4 max-w-4xl mx-auto text-center">
+  <section id="tentang" class="scroll-mt-28 py-10 px-4 max-w-4xl mx-auto text-center">
     <h3 class="text-2xl font-bold mb-4">Tentang Kami</h3>
     <p class="text-gray-400">Kami adalah platform penukaran kripto ke rupiah yang terpercaya. Sistem otomatis kami memastikan transaksi Anda cepat dan aman tanpa ribet.</p>
   </section>
 
   <!-- Kontak Section -->
-  <section id="kontak" class="py-10 px-4 max-w-4xl mx-auto text-center">
-    <h3 class="text-2xl font-bold mb-4">Hubungi Kami</h3>
-    <p class="text-gray-400">Jika ada pertanyaan atau kendala, hubungi kami melalui WhatsApp: <a href="https://wa.me/628xxxxxxxxxx" class="text-purple-400 underline">Klik di sini</a></p>
-  </section>
+  <section id="kontak" class="scroll-mt-28 py-10 px-4 max-w-4xl mx-auto text-center">
+  <h3 class="text-2xl font-bold mb-4">Hubungi Kami</h3>
+  <p class="text-gray-400">Jika ada pertanyaan atau kendala, hubungi kami...</p>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-purple-900 text-center p-4 text-sm text-gray-200">
-    &copy; 2025 TukarCrypto.id - All rights reserved.
-  </footer>
+<!-- Footer -->
+<footer class="bg-purple-900 text-center p-4 text-sm text-gray-200">
+  &copy; 2025 TukerCrypto.com - All rights reserved.
+</footer>
+
+
+<!-- ✅ CDN Lenis -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.35/bundled/lenis.min.js"></script>
+
+<!-- ✅ Kode Init (sudah pakai DOMContentLoaded) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  });
+</script>
+
 </body>
 </html>
