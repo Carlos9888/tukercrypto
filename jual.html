@@ -1,0 +1,34 @@
+<!-- jual.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jual USDT - TukerCrypto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+  <div class="bg-gray-900 p-6 rounded-xl shadow-xl w-full max-w-md">
+    <h1 class="text-2xl font-bold text-purple-400 mb-6 text-center">Formulir Penjualan USDT</h1>
+    
+    <form action="#" method="POST" class="space-y-4">
+      <input type="number" name="jumlah" placeholder="Jumlah USDT" class="w-full p-3 bg-gray-800 rounded-lg border border-purple-600 text-white" required />
+
+      <input type="text" name="wallet" placeholder="Alamat Wallet Anda" class="w-full p-3 bg-gray-800 rounded-lg border border-purple-600 text-white" required />
+
+      <select name="pembayaran" class="w-full p-3 bg-gray-800 rounded-lg border border-purple-600 text-white" required>
+        <option value="">Pilih Metode Pembayaran</option>
+        <option value="bca">BCA</option>
+        <option value="bri">BRI</option>
+        <option value="dana">DANA</option>
+      </select>
+
+      <input type="text" name="nama" placeholder="Nama Pemilik Rekening" class="w-full p-3 bg-gray-800 rounded-lg border border-purple-600 text-white" required />
+
+      <input type="text" name="rekening" placeholder="Nomor Rekening / DANA" class="w-full p-3 bg-gray-800 rounded-lg border border-purple-600 text-white" required />
+
+      <button type="submit" class="w-full bg-purple-700 hover:bg-purple-600 p-3 rounded-lg text-white font-semibold transition">Kirim Permintaan</button>
+    </form>
+  </div>
+</body>
+</html>
