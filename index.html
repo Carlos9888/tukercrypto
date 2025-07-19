@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TukerCrypto.com</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans" data-scroll>
+
+  <!-- ✅ HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md p-4">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="https://assets.coingecko.com/coins/images/325/large/Tether.png" alt="Logo" class="w-8 h-8 rounded-full">
+      <h1 class="text-base md:text-xl font-bold text-white">TukerCrypto.com</h1>
+    </div>
+
+     <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm md:text-base">
+        <a href="#beranda" class="hover:underline">Beranda</a>
+        <a href="#cekpesanan" class="hover:underline">Cek Pesanan</a>
+        <a href="#layanan" class="hover:underline">Layanan</a>
+        <a href="#tentang" class="hover:underline">Tentang</a>
+        <a href="#kontak" class="hover:underline">Kontak</a>
+        <a href="#login" class="bg-black px-3 py-1 rounded hover:bg-gray-800">Log In</a>
+        <a href="#signup" class="bg-purple-700 px-3 py-1 rounded hover:bg-purple-600">Sign Up</a>
+      </nav>
+
+  <!-- ☰ Button (Mobile) -->
+      <button class="md:hidden text-white text-3xl" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- ✅ SLIDE MENU MOBILE -->
+  <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-purple-900 z-50 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-6">
+    <div>
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button onclick="toggleMenu()" class="text-2xl text-white">✕</button>
+      </div>
+      <nav class="space-y-4">
+        <a href="#beranda" class="block hover:underline">Beranda</a>
+        <a href="#cekpesanan" class="block hover:underline">Cek Pesanan</a>
+        <a href="#layanan" class="block hover:underline">Layanan</a>
+        <a href="#tentang" class="block hover:underline">Tentang</a>
+        <a href="#kontak" class="block hover:underline">Kontak</a>
+      </nav>
+    </div>
+    <div class="space-y-2">
+      <a href="#login" class="bg-black text-white px-4 py-2 rounded text-center block">Log In</a>
+      <a href="#signup" class="bg-purple-700 text-white px-4 py-2 rounded text-center block">Sign Up</a>
+    </div>
+  </div>
+  <!-- Hero Chart Section -->
+<section id="beranda" class="pt-28 bg-black py-10 px-4 md:px-10 text-center">
+  <h2 class="text-lg md:text-3xl font-semibold text-white mb-6 leading-snug">
+  Tukar USDT ⇆ IDR dari 
+  <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+    Berbagai Exchange
+  </span> <br>
+  <span class="text-blue-400">
+    Convert langsung ke rekening, atau beli USDT dikirim ke wallet kamu
+  </span>
+</h2>
+
+  <div class="flex justify-center">
+    <div class="border border-purple-500 p-2 rounded-xl w-full max-w-md md:max-w-3xl">
+      <img 
+        src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/dari%20crypto%20r.jpg?raw=true" 
+        alt="Chart Aset Terbaik" 
+        class="w-full rounded-md shadow-lg"
+      >
+    </div>
+  </div>
+</section>
+
+  <!-- Layanan Section -->
+<section id="layanan" class="py-10 px-4 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-bold mb-6">
+  <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+    Exchange Internal USDT ⇆ IDR
+  </span>
+</h3>
+  <div class="grid grid-cols-2 gap-2 md:gap-6">
+
+
+ <!-- INDODAX/USDT -->
+<div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+  <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/idx%20t.jpg?raw=true" alt="USDT" class="w-full h-32 object-contain rounded-lg mb-3">
+  <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">INDODAX/USDT</h4>
+
+  <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="INDODAX/USDT BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+
+    <!-- Tombol Jual -->
+   <button 
+  data-action="jual" 
+  data-pair="INDODAX/USDT JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+
+    <!-- INDODAX/USDC -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/idx%20c.jpg?raw=true" alt="Solana" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">INDODAX/USDC</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="INDODAX/USDC BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="INDODAX/USDC JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+
+    <!-- BITGET/USDT -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/bgb%20t.jpg?raw=true" alt="TRX" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BITGET/USDT</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="BITGET/USDT BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="BITGET/USDT JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+    <!-- BITGET/USDC -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/bgb%20c.jpg?raw=true" alt="TON" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BITGET/USDC</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="BITGET/USDC BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="BITGET/USDC JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+   <!-- BYBIT/USDT -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/byt%20t.jpg?raw=true" alt="USDT" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BYBIT/USDT</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="BYBIT/USDT BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="BYBIT/USDT JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+    <!-- BYBIT/USDC -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/byt%20c.jpg?raw=true" alt="Solana" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BYBIT/USDC</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="BYBIT/USDC BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="BYBIT/USDC JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+
+    <!-- BINANCE/USDT -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/bnc%20t.jpg?raw=true" alt="TRX" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BINANCE/USDT</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="BINANCE/USDT BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="BINANCE/USDT JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+    <!-- BINANCE/USDC -->
+    <div class="bg-black border border-purple-600 p-4 rounded-xl shadow-md">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/bnc%20c.jpg?raw=true" alt="TON" class="w-full h-32 object-contain rounded-lg mb-3">
+      <h4 class="text-xs md:text-lg font-semibold mb-1 text-center">BINANCE/USDC</h4>
+      <!-- Dua tombol: Beli & Jual -->
+  <div class="flex justify-between mt-3 px-3 gap-3">
+    <!-- Tombol Beli -->
+    <button 
+  data-action="beli" 
+  data-pair="BINANCE/USDC BELI" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-gradient-to-b from-purple-500 to-purple-700 border border-purple-500 hover:opacity-90 hover:animate-pulse w-1/2">
+BELI
+</button>
+
+    <!-- Tombol Jual -->
+    <button 
+  data-action="jual" 
+  data-pair="BINANCE/USDC JUAL" 
+  class="text-sm font-semibold px-4 py-2 rounded-lg text-white bg-black border border-gray-400 hover:opacity-90 hover:animate-pulse w-1/2">
+  JUAL
+</button>
+  </div>
+</div>
+
+  </div>
+</section>
+
+  <!-- Tentang Section -->
+<script>
+  const lenis = new Lenis({
+    duration: 0.2,
+    easing: (t) => t,
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+
+
+
+  <h3 class="text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
+    Tentang Kami
+  </h3>
+  <p class="text-gray-300 text-base md:text-lg leading-relaxed">
+    Kami adalah platform penukaran kripto ke rupiah yang <span class="text-white font-semibold">terpercaya</span>. 
+    Sistem otomatis kami memastikan transaksi Anda <span class="text-white font-semibold">cepat</span> dan <span class="text-white font-semibold">aman</span> tanpa ribet.
+  </p>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-purple-900 text-center p-4 text-sm text-gray-200">
+    &copy; 2025 TukerCrypto.com - All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+  
+</body>
+</html>
