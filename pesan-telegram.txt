@@ -1,2 +1,0 @@
-cd "C:\Users\rezak\Downloads\Telegram Desktop\botku"
-py bot_upload_github.py
