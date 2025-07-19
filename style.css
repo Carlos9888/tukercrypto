@@ -1,0 +1,10 @@
+/* style.css */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
