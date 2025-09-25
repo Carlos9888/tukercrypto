@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cek Pesanan - TukerCrypto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen flex flex-col">
+
+  <!-- ✅ HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md p-4">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.jpg?raw=true" alt="Logo" class="w-8 h-8 rounded-full">
+      <h1 class="text-base md:text-xl font-bold text-white">TukerCrypto.com</h1>
+    </div>
+
+     <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm md:text-base">
+        <a href="index.html#beranda" class="hover:underline">Beranda</a>
+        <a href="cekpesanan.html" class="hover:underline">Cek Pesanan</a>
+        <a href="index.html#layanan" class="hover:underline">Layanan</a>
+        <a href="index.html#tentang" class="hover:underline">Tentang</a>
+        <a href="index.html#kontak" class="hover:underline">Kontak</a>
+        <a href="index.html#login" class="bg-black px-3 py-1 rounded hover:bg-gray-800">Log In</a>
+        <a href="index.html#signup" class="bg-purple-700 px-3 py-1 rounded hover:bg-purple-600">Sign Up</a>
+      </nav>
+
+  <!-- ☰ Button (Mobile) -->
+      <button class="md:hidden text-white text-3xl" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- ✅ OVERLAY LAYAR BELAKANG (blur seluruh halaman saat menu muncul) -->
+<div id="overlay" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden transition-opacity duration-300"></div>
+
+<!-- ✅ SLIDE MENU MOBILE (dengan blur background) -->
+<div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full z-50 bg-black/70 backdrop-blur-lg transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-6">
+  <div>
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-xl font-bold text-white">Menu</h2>
+      <button onclick="toggleMenu()" class="text-2xl text-white">✕</button>
+    </div>
+    <nav class="space-y-4">
+      <a href="#beranda" class="block hover:underline text-white">Beranda</a>
+      <a href="#cekpesanan" class="block hover:underline text-white">Cek Pesanan</a>
+      <a href="#layanan" class="block hover:underline text-white">Layanan</a>
+      <a href="#tentang" class="block hover:underline text-white">Tentang</a>
+      <a href="#kontak" class="block hover:underline text-white">Kontak</a>
+    </nav>
+  </div>
+  <div class="space-y-2 pt-4">
+    <a href="#login" class="bg-black text-white px-4 py-2 rounded text-center block hover:bg-gray-800">Log In</a>
+    <a href="#signup" class="bg-purple-700 text-white px-4 py-2 rounded text-center block hover:bg-purple-600">Sign Up</a>
+  </div>
+</div>
+ 
+
+  <!-- Form Cek Pesanan -->
+  <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
+    <h2 class="text-2xl font-bold mb-4">🔍 Lacak Transaksi</h2>
+    <p class="text-gray-400 mb-6 text-sm">Masukkan Nomor Invoice untuk cek status pesananmu.</p>
+
+    <form class="max-w-md w-full flex flex-col sm:flex-row gap-3 justify-center">
+      <input type="text" placeholder="Masukkan Nomor Invoice"
+             class="flex-1 px-4 py-2 rounded-lg text-black focus:outline-none">
+      <button type="submit" 
+              class="bg-purple-700 hover:bg-purple-600 px-6 py-2 rounded-lg font-medium">
+        Cek
+      </button>
+    </form>
+
+    <!-- Hasil Dummy -->
+    <div class="bg-gray-800 p-4 rounded-lg max-w-md w-full mt-8 text-left hidden" id="hasilCek">
+      <p><strong>Nomor Invoice:</strong> INV123456</p>
+      <p><strong>Status:</strong> <span class="text-yellow-400">Menunggu Pembayaran</span></p>
+      <p><strong>Jumlah:</strong> $50 (≈ Rp 750.000)</p>
+      <p><strong>Metode Bayar:</strong> QRIS</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black/80 text-center py-4 text-xs text-gray-400">
+    &copy; 2025 TukerCrypto.com - All rights reserved.
+  </footer>
+
+</body>
+</html>
