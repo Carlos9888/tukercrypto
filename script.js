@@ -1,10 +1,38 @@
 console.log("✅ script.js berhasil dimuat");
 
-// Fungsi toggle menu mobile
+// ✅ Fungsi toggle menu mobile
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("translate-x-full");
+  const overlay = document.getElementById("overlay");
+  const isOpen = !menu.classList.contains("translate-x-full");
+
+  if (isOpen) {
+    menu.classList.add("translate-x-full");
+    if (overlay) overlay.classList.add("hidden");
+  } else {
+    menu.classList.remove("translate-x-full");
+    if (overlay) overlay.classList.remove("hidden");
+  }
 }
+
+// ✅ Tutup menu otomatis saat link diklik
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileLinks = document.querySelectorAll('#mobileMenu a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      toggleMenu(); // Tutup menu
+
+      // Kalau link ke halaman lain, tunggu sebentar baru pindah
+      if (!href.startsWith('#')) {
+        e.preventDefault();
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200); // delay 0.2s biar animasi slide kelihatan
+      }
+    });
+  });
+});
 
 // Inisialisasi smooth scroll Lenis setelah DOM siap
 document.addEventListener("DOMContentLoaded", function () {
