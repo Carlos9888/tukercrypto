@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TukerCrypto.com</title>
-
  <!-- Favicon universal -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.png?raw=true">
 <link rel="icon" type="image/png" sizes="192x192" href="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.png?raw=true">
@@ -15,6 +14,9 @@
 <!-- Windows Tile -->
 <meta name="msapplication-TileImage" content="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.png?raw=true">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Pastikan udah include Font Awesome di <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="TukerCrypto.com - Transaksi Crypto Tanpa Ribet">
@@ -38,7 +40,7 @@
      <!-- Desktop Menu -->
       <nav class="hidden md:flex items-center space-x-4 text-sm md:text-base">
         <a href="#beranda" class="hover:underline">Beranda</a>
-        <a href="#cekpesanan" class="hover:underline">Cek Pesanan</a>
+        <a href="cekpesanan.html" class="hover:underline">Cek Pesanan</a>
         <a href="#layanan" class="hover:underline">Layanan</a>
         <a href="#tentang" class="hover:underline">Tentang</a>
         <a href="#kontak" class="hover:underline">Kontak</a>
@@ -77,14 +79,14 @@
 
 
   <!-- Hero Section -->
-<section class="relative z-10 bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md py-16 px-6">
+<section id="beranda" class="relative z-10 bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md py-16 px-6">
   <div class="max-w-5xl mx-auto text-center mb-10">
     <h2 class="text-4xl md:text-5xl font-bold leading-tight">
       Transaksi Crypto <span class="text-purple-400">tanpa Ribet</span> <br>
       & Tukar Aset Web3 <span class="text-blue-400">Langsung ke E-wallet</span>
     </h2>
     <p class="text-lg text-gray-300 mt-4">
-      TukerCrypto bantu kamu ubah token dari wallet/web3 ke saldo rekening dan e-wallet — cocok untuk pemula dan freelancer crypto.
+      TukerCrypto, tempat paling aman & cepat untuk beli/jual USDT, TRX, dan crypto lainnya ke IDR dengan cara convert, minimal penukaran $1
     </p>
   </div>
 
@@ -151,7 +153,7 @@
   <!-- Layanan Section -->
 <section id="layanan" class="py-10 px-4 max-w-6xl mx-auto">
   <h3 class="text-2xl font-bold mb-6">
-  <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+  <span class="text-purple-400t">
     Exchange Internal USDT ⇆ IDR
   </span>
 </h3>
@@ -363,9 +365,9 @@ BELI
 <!-- ✅ Tambahan: Layanan 2 - Transfer On Chain -->
 <section id="transfer-onchain" class="py-10 px-4 max-w-6xl mx-auto">
   <h3 class="text-2xl font-bold mb-6">
-    <span class="bg-gradient-to-r from-green-400 to-purple-600 text-transparent bg-clip-text">
-      Transfer On Chain
-    </span>
+    <span class="text-purple-400t">
+   Transfer On Chain
+  </span>
   </h3>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -495,8 +497,10 @@ BELI
 
 <!-- ✅ Section: Beli Token Gas -->
 <section id="beli-gas" class="py-10 px-4 max-w-6xl mx-auto">
-  <h3 class="text-2xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
-    Beli Token Gas (TRX, BSC, SOL, dll)
+  <h3 class="text-2xl font-bold mb-6">
+    <span class="text-purple-400t">
+   Beli Token Gas (TRX, BNB, SOL, dll)
+  </span>
   </h3>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -638,23 +642,82 @@ BELI
   </div>
 </section>
 
-  <!-- Tentang Section -->
+ <!-- Tentang Section -->
+<section class="my-16 px-4 md:px-0">
   <h3 class="text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
     Tentang Kami
   </h3>
-  <p class="text-gray-300 text-base md:text-lg leading-relaxed">
-    Kami adalah platform penukaran kripto ke rupiah yang <span class="text-white font-semibold">terpercaya</span>. 
-    Sistem otomatis kami memastikan transaksi Anda <span class="text-white font-semibold">cepat</span> dan <span class="text-white font-semibold">aman</span> tanpa ribet.
+  <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+    TukerCrypto adalah platform penukaran kripto ke rupiah yang <span class="text-white font-semibold">cepat</span>, <span class="text-white font-semibold">aman</span>, dan <span class="text-white font-semibold">otomatis</span>. 
+    Transaksi Anda diproses secara langsung tanpa proses yang rumit.
+  </p>
+  <p class="text-gray-400 text-sm md:text-base">
+    Kami hadir untuk mempermudah pengguna menukar kripto mereka, dengan sistem yang transparan dan mudah digunakan.  
+    Nikmati kemudahan transaksi mulai sekarang.
   </p>
 </section>
 
+<!-- ✅ SECTION KONTAK + FOOTER SATU BACKGROUND -->
+<section id="kontak" class="py-8 bg-gradient-to-b from-gray-900 to-black text-center text-white">
+  <!-- Logo TC -->
+  <div class="flex justify-center mb-4">
+    <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.jpg?raw=true" 
+         alt="TukerCrypto Logo" 
+         class="w-12 h-12 rounded-full shadow-lg">
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-purple-900 text-center p-4 text-sm text-gray-200">
-    &copy; 2025 TukerCrypto.com - All rights reserved.
+  <h2 class="text-xl font-bold mb-3">Kontak Support</h2>
+  <p class="mb-6 text-gray-400 text-sm">Butuh bantuan? Hubungi kami lewat channel resmi berikut:</p>
+  
+  <div class="flex flex-col items-center space-y-3 mb-6">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6283152711277" target="_blank"
+       class="flex items-center space-x-2 bg-green-600 px-4 py-2 rounded-xl shadow-md hover:bg-green-700 transition w-64 justify-center text-sm">
+      <i class="fab fa-whatsapp text-lg"></i>
+      <span class="font-medium">+62 831-5271-1277</span>
+    </a>
+
+    <!-- Telegram -->
+    <a href="https://t.me/tukercryptocom" target="_blank"
+       class="flex items-center space-x-2 bg-blue-600 px-4 py-2 rounded-xl shadow-md hover:bg-blue-700 transition w-64 justify-center text-sm">
+      <i class="fab fa-telegram text-lg"></i>
+      <span class="font-medium">@tukercryptocom</span>
+    </a>
+  </div>
+
+  <!-- ✅ Footer di dalam 1 section -->
+  <footer class="text-center py-4 text-xs text-gray-400 border-t border-gray-800">
+    <div class="flex items-center justify-center space-x-2">
+      <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.jpg?raw=true" 
+           alt="TukerCrypto Logo" 
+           class="w-6 h-6 rounded-full shadow">
+      <span>&copy; 2025 TukerCrypto.com - All rights reserved.</span>
+    </div>
   </footer>
+</section>
+
 
   <script src="script.js"></script>
-  
-</body>
-</html>
+
+
+<!-- Popup Join Profesional -->
+<div id="joinPopup" class="hidden">
+  <!-- Overlay gelap -->
+  <div class="popup-overlay"></div>
+
+  <!-- Konten popup -->
+  <div class="popup-content">
+    <button id="closePopup" class="close-btn">&times;</button>
+    
+    <h3 class="popup-title">Gabung Telegram / WA</h3>
+    <p class="popup-text">Dapat info terbaru dan promo menarik!</p>
+    
+    <div class="popup-buttons">
+      <a href="https://t.me/tukercryptocom" target="_blank" class="btn-telegram">Telegram</a>
+      <a href="https://wa.me/1234567890" target="_blank" class="btn-wa">WhatsApp</a>
+    </div>
+    
+    <button id="dontShowAgain" class="dont-show">Jangan tampilkan lagi</button>
+  </div>
+</div>
+
