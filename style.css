@@ -1,10 +1,112 @@
-/* style.css */
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #000;
   color: #fff;
   font-family: sans-serif;
+}
+
+/* popup style*/
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 50;
+}
+
+/* Konten popup */
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90%;
+  height: 450px;
+  background: url('https://raw.githubusercontent.com/Carlos9888/tukercrypto/main/assets/tc.jpg') center/cover no-repeat;
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Tampilkan popup */
+.popup-content.show {
+  opacity: 1;
+}
+
+/* Tombol X */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* Judul & teks */
+.popup-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.popup-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Tombol Telegram / WA */
+.popup-buttons a {
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.btn-telegram { background-color: #0088cc; }
+.btn-telegram:hover { background-color: #00aaff; }
+.btn-wa { background-color: #25d366; }
+.btn-wa:hover { background-color: #1ebe57; }
+
+/* Tombol jangan tampilkan lagi */
+.dont-show {
+  margin-top: 15px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dont-show:hover { background: rgba(0,0,0,0.7); }
+
+/* Responsive */
+@media(max-width: 768px) {
+  .popup-content {
+    width: 90%;
+    height: 350px;
+  }
 }
