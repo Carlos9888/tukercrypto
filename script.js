@@ -34,128 +34,63 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Inisialisasi smooth scroll Lenis setelah DOM siap
+
+
+// Fungsi ambil parameter dari URL
+function getQueryParam(param) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(param);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.0,
-      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      smoothTouch: true
+
+
+  // ✅ Form Pembelian
+  const form = document.getElementById("form-beli");
+  if (form) {
+    const pair = getQueryParam("pair") || "Tidak diketahui";
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const jumlah = form.jumlah.value;
+      const jaringan = form.jaringan.value;
+      const wallet = form.alamat.value;
+
+      const text = `🚀 *PERMINTAAN PEMBELIAN*\n\n📊 Pasangan: ${pair}\n💰 Jumlah: ${jumlah}\n🔗 Jaringan: ${jaringan}\n👛 Wallet: ${wallet}`;
+      kirimKeTelegram(text, form);
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    // Tambah teks "Kamu sedang beli..."
+    const pairText = getQueryParam("pair");
+    if (pairText) {
+      const pairInfo = document.createElement("p");
+      pairInfo.textContent = `Kamu sedang beli: ${pairText}`;
+      pairInfo.className = "text-sm text-purple-400 mb-4";
+      form.prepend(pairInfo);
     }
-
-    requestAnimationFrame(raf);
   }
 
- // Handle form submit di beli.html
-  // Fungsi ambil query dari URL
-function getQueryParam(param) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(param);
-}
-
-const form = document.getElementById("form-beli");
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const jumlah = form.jumlah.value;
-    const jaringan = form.jaringan.value;
-    const wallet = form.alamat.value;
+  // ✅ Form Penjualan
+  const formJual = document.getElementById("form-jual");
+  if (formJual) {
     const pair = getQueryParam("pair") || "Tidak diketahui";
 
-    const token = "8069143332:AAHvshJ28eZjqXnB53KoSYwUfhWERCWSYds";
-    const chat_id = "-1002767937795";
-    const text = `🚀 *PERMINTAAN PEMBELIAN*\n\n📊 Pasangan: ${pair}\n💰 Jumlah: ${jumlah}\n🔗 Jaringan: ${jaringan}\n👛 Wallet: ${wallet}`;
+    formJual.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chat_id,
-        text: text,
-        parse_mode: "Markdown",
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.ok) {
-          alert("Pesanan kamu berhasil dikirim!");
-          form.reset();
-        } else {
-          alert("Gagal mengirim ke Telegram.");
-        }
-      })
-      .catch((err) => {
-        alert("Error: " + err.message);
-      });
-  });
+      const jumlah = formJual.jumlah.value;
+      const jaringan = formJual.jaringan.value;
+      const bank = formJual.bank.value;
+      const norek = formJual.norek.value;
+      const nama = formJual.nama.value;
 
-  // ✅ Tambahan: Tampilkan pasangan di halaman
-  const pairText = getQueryParam("pair");
-  if (pairText) {
-    const pairInfo = document.createElement("p");
-    pairInfo.textContent = `Kamu sedang beli: ${pairText}`;
-    pairInfo.className = "text-sm text-purple-400 mb-4";
-    form.prepend(pairInfo);
-  }
-}
-
-
-  
-  // Tangkap jual
-function getQueryParam(param) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(param);
-}
-
-const formJual = document.getElementById("form-jual");
-if (formJual) {
-  formJual.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const jumlah = formJual.jumlah.value;
-    const jaringan = formJual.jaringan.value;
-    const bank = formJual.bank.value;
-    const norek = formJual.norek.value;
-    const nama = formJual.nama.value;
-
-    const pair = getQueryParam("pair") || "Tidak diketahui";
-
-    const token = "8069143332:AAHvshJ28eZjqXnB53KoSYwUfhWERCWSYds";
-    const chat_id = "-1002767937795";
-    const text = `📤 *Permintaan Penjualan!*\n\n📊 Pasangan: ${pair}\n💸 Jumlah: ${jumlah} USDT\n🔗 Jaringan: ${jaringan}\n🏦 Bank: ${bank}\n#️⃣ No. Rek: ${norek}\n👤 Atas Nama: ${nama}`;
-
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chat_id,
-        text: text,
-        parse_mode: "Markdown",
-      }),
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.ok) {
-        alert("Data penjualan kamu berhasil dikirim!");
-        formJual.reset();
-      } else {
-        alert("Gagal mengirim ke Telegram.");
-      }
-    })
-    .catch((err) => {
-      alert("Error: " + err.message);
+      const text = `📤 *Permintaan Penjualan!*\n\n📊 Pasangan: ${pair}\n💸 Jumlah: ${jumlah} USDT\n🔗 Jaringan: ${jaringan}\n🏦 Bank: ${bank}\n#️⃣ No. Rek: ${norek}\n👤 Atas Nama: ${nama}`;
+      kirimKeTelegram(text, formJual);
     });
-  });
-}
+  }
 
-  // Handle tombol BELI/JUAL di index.html
+  // ✅ Tombol BELI / JUAL
   const buttons = document.querySelectorAll("button[data-action][data-pair]");
   buttons.forEach(button => {
     button.addEventListener("click", function () {
@@ -163,5 +98,70 @@ if (formJual) {
       const pair = this.dataset.pair;
       window.location.href = `${action}.html?action=${action}&pair=${encodeURIComponent(pair)}`;
     });
+  });
+});
+
+// Fungsi Kirim ke Telegram
+function kirimKeTelegram(text, formElement) {
+  const token = "8069143332:AAHvshJ28eZjqXnB53KoSYwUfhWERCWSYds";
+  const chat_id = "-1002767937795";
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chat_id,
+      text: text,
+      parse_mode: "Markdown",
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.ok) {
+        alert("✅ Data berhasil dikirim!");
+        formElement.reset();
+      } else {
+        alert("❌ Gagal mengirim ke Telegram.");
+      }
+    })
+    .catch((err) => {
+      alert("Error: " + err.message);
+    });
+}
+
+// ✅ Loader hide setelah halaman selesai load
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.display = "none"; // hilang seketika
+  }
+});
+
+// ✅ Popup Join Profesional
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("joinPopup");
+  const content = document.querySelector(".popup-content");
+  const closeBtn = document.getElementById("closePopup");
+  const dontShowBtn = document.getElementById("dontShowAgain");
+
+  // Cek localStorage
+  if (!localStorage.getItem("hideJoinPopup")) {
+    popup.classList.remove("hidden");
+    setTimeout(() => content.classList.add("show"), 50);
+  }
+
+  // Fungsi tutup popup
+  function hidePopup() {
+    content.classList.remove("show");
+    setTimeout(() => popup.classList.add("hidden"), 300);
+  }
+
+  // Tombol X
+  closeBtn.addEventListener("click", hidePopup);
+
+  // Tombol jangan tampilkan lagi
+  dontShowBtn.addEventListener("click", () => {
+    localStorage.setItem("hideJoinPopup", "true");
+    hidePopup();
   });
 });
