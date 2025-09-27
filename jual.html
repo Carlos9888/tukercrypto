@@ -105,48 +105,106 @@
   </div>
 </div>
 
+ <!-- Hero Section -->
+<main class="flex flex-col items-center px-4 pt-16 space-y-12 bg-black">
+<!-- ✅ MAIN FORM JUAL -->
+<section class="w-full flex justify-center px-4 py-16 bg-black">
+  <div class="w-full max-w-6xl bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md p-12 rounded-3xl shadow-2xl border border-purple-700">
+    
+    <!-- Header Card -->
+<div id="headerCard" class="mb-10 text-center">
+  <h2 id="headerTitle" class="text-4xl md:text-5xl font-extrabold mb-4 flex justify-center items-center gap-3 text-white">
+    <span id="headerIcon">💰</span> 
+    <span id="headerText">Form Transaksi</span>
+  </h2>
+  <p id="headerDesc" class="text-purple-300 text-sm md:text-base max-w-3xl mx-auto">
+    Tunggu sebentar, sedang memuat informasi transaksi...
+  </p>
+</div>
 
-<!-- ✅ MAIN FORM BELI -->
-<main class="flex-grow flex flex-col justify-start items-center text-center px-4 pt-32">
-    <h2 class="text-3xl font-bold mb-6">💰 Beli USDT</h2>
-    <p class="text-gray-400 mb-6 text-sm max-w-xl">
-  <h1 class="text-2xl font-bold mb-4">Jual USDT</h1>
 
-  <form id="form-jual" class="space-y-4 max-w-md">
-    <div>
-      <label for="jumlah" class="block mb-1">Jumlah USDT</label>
-      <input type="number" id="jumlah" name="jumlah" class="w-full p-2 rounded text-black" required>
-    </div>
+    <!-- Form -->
+    <form id="form-jual" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Jumlah -->
+      <div class="col-span-1 md:col-span-2">
+        <label for="jumlah" class="block mb-2 font-semibold">Jumlah USDT/USDC</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" max="100" placeholder="Contoh: 10" 
+               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
+        <p id="estimasiIDR" class="text-sm text-gray-400 mt-1">Estimasi IDR: Rp 0</p>
+      </div>
 
-    <div>
-      <label for="jaringan" class="block mb-1">Pilih Jaringan</label>
-      <select id="jaringan" name="jaringan" class="w-full p-2 rounded text-black" required>
-        <option value="">-- Pilih --</option>
-        <option value="TRC20">TRC20</option>
-        <option value="ERC20">ERC20</option>
-        <option value="MANTLE">Mantle</option>
-      </select>
-    </div>
+      <!-- Bank / E-wallet -->
+<div class="col-span-1 md:col-span-2">
+  <label for="bank" class="block mb-2 font-semibold text-white">Pilih Bank / E-wallet</label>
+  <select id="bank" name="bank" 
+          class="w-full p-4 rounded-2xl bg-black border border-gray-700 text-white focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
+          size="1" required>
+    <option value="" disabled selected>-- Pilih Bank / E-wallet --</option>
+    <option value="BCA">BCA</option>
+    <option value="BNI">BNI</option>
+    <option value="BRI">BRI</option>
+    <option value="MANDIRI">Mandiri</option>
+    <option value="SEABANK">SeaBank</option>
+    <option value="DANA">DANA</option>
+    <option value="OVO">OVO</option>
+    <option value="GOPAY">GoPay</option>
+    <option value="SHOPEEPAY">ShopeePay</option>
+  </select>
+  <p class="text-gray-400 text-sm mt-1">Scroll untuk melihat semua pilihan jika diperlukan.</p>
+</div>
 
-    <div>
-      <label for="bank" class="block mb-1">Nama Bank</label>
-      <input type="text" id="bank" name="bank" class="w-full p-2 rounded text-black" required>
-    </div>
 
-    <div>
-      <label for="norek" class="block mb-1">Nomor Rekening</label>
-      <input type="text" id="norek" name="norek" class="w-full p-2 rounded text-black" required>
-    </div>
 
-    <div>
-      <label for="nama" class="block mb-1">Nama Pemilik Rekening</label>
-      <input type="text" id="nama" name="nama" class="w-full p-2 rounded text-black" required>
-    </div>
+      <!-- Nomor Rekening -->
+      <div>
+        <label for="norek" class="block mb-2 font-semibold">Nomor Rekening</label>
+        <input type="text" id="norek" name="norek" placeholder="Contoh: 1234567890" 
+               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
+               required pattern="\d+">
+      </div>
 
-    <button type="submit" class="bg-purple-700 hover:bg-purple-600 px-4 py-2 rounded">
-      Lanjutkan Penjualan
-    </button>
-  </form>
+      <!-- Nama Pemilik -->
+      <div>
+        <label for="nama" class="block mb-2 font-semibold">Nama Pemilik Rekening</label>
+        <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" 
+               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
+               required>
+      </div>
+
+      <!-- Email / WA Notifikasi -->
+      <div class="col-span-1 md:col-span-2">
+        <label class="block mb-2 font-semibold">Metode Notifikasi</label>
+        <div class="flex gap-4 mb-3">
+          <button type="button" id="notifEmailBtn" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">Email</button>
+          <button type="button" id="notifWA" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">WhatsApp</button>
+        </div>
+        <input type="text" id="notifInput" name="notif" placeholder="Isi email / WA" 
+               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
+      </div>
+
+      <!-- Submit -->
+      <div class="col-span-1 md:col-span-2">
+        <button type="submit" 
+                class="w-full bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400 text-white p-4 rounded-2xl font-bold text-lg transition duration-300 shadow-lg hover:shadow-xl">
+          Lanjutkan Penjualan
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+ 
+
+<!-- Footer keluar dari main -->
+<footer class="text-center py-6 text-xs text-gray-400 border-t border-gray-800">
+  <div class="flex items-center justify-center space-x-2">
+    <img src="https://github.com/Carlos9888/tukercrypto/blob/main/assets/tc.jpg?raw=true" 
+         alt="TukerCrypto Logo" 
+         class="w-6 h-6 rounded-full shadow">
+    <span>&copy; 2025 TukerCrypto.com - All rights reserved.</span>
+  </div>
+</footer>
 
 
   <script src="script.js" defer></script>
