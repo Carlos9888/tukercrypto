@@ -160,9 +160,8 @@
   <!-- Bank / E-wallet -->
 <div class="col-span-1 md:col-span-2">
   <label for="bank" class="block mb-2 font-semibold">Pilih Bank / E-wallet</label>
-  <select id="bank" name="bank"
-          class="w-full p-4 rounded-2xl bg-black border border-gray-700 text-white focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300 appearance-none">
-    <option value="" disabled selected>-- Pilih Bank / E-wallet --</option>
+  <select id="bank" name="bank" class="w-full p-4 rounded-2xl bg-black border border-gray-700 text-white focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none custom-select" required>
+  <option value="" disabled selected>-- Pilih Bank / E-wallet --</option>
 
     <!-- Bank -->
     <optgroup label="Bank">
@@ -170,21 +169,24 @@
       <option value="BNI">BNI</option>
       <option value="BRI">BRI</option>
       <option value="MANDIRI">Mandiri</option>
-      <option value="SEABANK">SeaBank</option>
+      <option value="CIMB Niaga">CIMB Niaga</option>
+      <option value="Permata">Permata</option>
     </optgroup>
 
     <!-- E-wallet -->
     <optgroup label="E-wallet">
       <option value="DANA">DANA</option>
       <option value="OVO">OVO</option>
-      <option value="GOPAY">GoPay</option>
-      <option value="SHOPEEPAY">ShopeePay</option>
+      <option value="GoPay">GoPay</option>
+      <option value="ShopeePay">ShopeePay</option>
+      <option value="LinkAja">LinkAja</option>
     </optgroup>
   </select>
   <p class="text-gray-400 text-sm mt-1">
     Pilih rekening bank atau e-wallet yang ingin kamu gunakan untuk menerima pembayaran. Pastikan data sesuai agar transaksi lancar.
   </p>
 </div>
+
 
 
   <!-- Nomor Rekening -->
@@ -196,23 +198,33 @@
   </div>
 
   <!-- Nama Pemilik -->
-  <div>
-    <label for="nama" class="block mb-2 font-semibold">Nama Pemilik Rekening</label>
-    <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" 
-           class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
-           required>
-  </div>
+<div>
+  <label for="nama" class="block mb-2 font-semibold">Nama Pemilik Rekening</label>
+  <input type="text" id="nama" name="nama" placeholder="Isi sesuai nama di rekening / e-wallet (cth: Budi Santoso)"
+         class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300"
+         required>
+</div>
 
-  <!-- Email / WA Notifikasi -->
-  <div class="col-span-1 md:col-span-2">
-    <label class="block mb-2 font-semibold">Metode Notifikasi</label>
-    <div class="flex gap-4 mb-3">
-      <button type="button" id="notifEmailBtn" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">Email</button>
-      <button type="button" id="notifWA" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">WhatsApp</button>
+ <!-- Email & WA Notifikasi -->
+<div class="col-span-1 md:col-span-2">
+  <label class="block mb-2 font-semibold">Metode Notifikasi</label>
+  <div class="flex flex-col gap-4 mb-3">
+    <!-- Email -->
+    <div>
+      <input type="email" id="notifEmail" name="notifEmail" placeholder="Masukkan email Anda"
+             class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300">
     </div>
-    <input type="text" id="notifInput" name="notif" placeholder="Isi email / WA" 
-           class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
+    <!-- WA -->
+    <div>
+      <input type="tel" id="notifWA" name="notifWA" placeholder="Masukkan nomor WA Anda"
+             class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300">
+    </div>
   </div>
+  <p class="text-gray-400 text-sm mt-1">
+    Masukkan email dan nomor WhatsApp agar notifikasi pembayaran bisa langsung dikirim ke Anda.
+  </p>
+</div>
+
 
   <!-- Submit -->
   <div class="col-span-1 md:col-span-2">
