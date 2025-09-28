@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (action && exchange && token) {
     // Judul utama
     headerText.textContent = 
-      `${action === "beli" ? "Convert ke " + token : "Tukar " + token + " ke Rupiah"} (${exchange})`;
+      `${action === "beli" ? "Convert ke " + token : "Tuker " + token + " ke Rupiah"} (${exchange})`;
 
     // Deskripsi
 headerDesc.textContent =
@@ -119,16 +119,16 @@ headerIcon.textContent = action === "beli" ? "📥🔑" : "📤🏦";
   
   else if (action && token) {
     headerText.textContent = 
-      action === "beli" ? `Convert ke ${token}` : `Tukar ${token}`;
+      action === "beli" ? `Convert ke ${token}` : `Tuker ${token}`;
     headerDesc.textContent = 
       action === "beli"
         ? `Konversi saldo Rupiah kamu menjadi ${token}.`
-        : `Tukar ${token} kamu menjadi Rupiah.`;
+        : `Tuker ${token} kamu menjadi Rupiah.`;
     headerIcon.textContent = action === "beli" ? "🔄💸" : "💱💰";
   } 
   
   else if (action) {
-    headerText.textContent = action === "beli" ? "Convert Aset" : "Tukar Aset";
+    headerText.textContent = action === "beli" ? "Convert Aset" : "Tuker Aset";
     headerDesc.textContent = `Isi formulir berikut untuk melakukan proses ${action}.`;
     headerIcon.textContent = action === "beli" ? "🔄" : "💱";
   } 
