@@ -141,8 +141,94 @@ headerIcon.textContent = action === "beli" ? "📥🔑" : "📤🏦";
 });
 
 
+// Ambil param dari URL
+function getUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    action: params.get("action")?.toLowerCase() || "jual",
+    exchange: params.get("exchange") || "USDT",
+    token: params.get("token") || "USDT",
+    jumlah: params.get("jumlah") || "", // tambahan
+  };
+}
 
-// ✅ Fungsi kirim ke Telegram
+// Kurs contoh
+const kurs = {
+  USDT: 16300,
+  USDC: 16300
+};
+
+// Update form & tombol submit sesuai param
+function updateForm({ action, exchange, token, jumlah }) {
+  const form = document.getElementById("form-jual");
+  const exchangeInput = document.getElementById("exchange");
+  const tokenInput = document.getElementById("token");
+  const actionInput = document.getElementById("actionType");
+  const submitBtn = document.getElementById("submitBtn");
+  const inputJumlah = document.getElementById("jumlah");
+  const estimasi = document.getElementById("estimasiIDR");
+  const labelJumlah = document.querySelector('label[for="jumlah"]');
+
+  if (!form || !exchangeInput || !tokenInput || !actionInput || !submitBtn) return;
+
+  // Hidden input
+  exchangeInput.value = exchange;
+  tokenInput.value = token;
+  actionInput.value = action;
+
+  // Update label jumlah sesuai token
+  if (labelJumlah) {
+    labelJumlah.textContent = `Jumlah ${token}`;
+  }
+
+  // Input jumlah otomatis jika ada
+if (inputJumlah) {
+  if (jumlah) inputJumlah.value = jumlah;
+  // Set placeholder sesuai token
+  inputJumlah.placeholder = `Minimal penarikan 1 ${token}`;
+  if (estimasi) estimasi.textContent = `Estimasi IDR: Rp ${Number(inputJumlah.value || 0) * (kurs[token] || 0)}`;
+}
+
+
+
+  // Event input untuk update estimasi langsung
+  if (inputJumlah && estimasi) {
+    const updateEstimasi = () => {
+      const val = Number(inputJumlah.value) || 0;
+      estimasi.textContent = `Kurs 16.300📈 Estimasi IDR: Rp ${ (val * (kurs[token] || 0)).toLocaleString() }`;
+    };
+    inputJumlah.addEventListener("input", updateEstimasi);
+    updateEstimasi(); // trigger sekali saat load
+  }
+
+  // Teks tombol submit
+  submitBtn.textContent = `Lanjutkan ${action === "beli" ? "Beli" : "Jual"} ${token}`;
+
+  // Update atribut action form (optional)
+  form.action = `/${action}`;
+}
+
+// Update header sesuai param
+function updateHeader({ action, exchange, token }) {
+  const headerIcon = document.getElementById("headerIcon");
+  const headerText = document.getElementById("headerText");
+  const headerDesc = document.getElementById("headerDesc");
+
+  if (!headerText || !headerDesc || !headerIcon) return;
+
+  headerText.textContent = action === "beli" 
+    ? `Convert ke ${token} (${exchange})` 
+    : `Tuker ${token} ke Rupiah (${exchange})`;
+
+  headerDesc.textContent = action === "beli"
+    ? `Kamu akan membeli ${token} melalui ${exchange}. Masukkan UID ${exchange} kamu dengan benar.`
+    : `Kamu akan menjual ${token} melalui ${exchange}. Pastikan nomor rekening bank kamu benar untuk menerima Rupiah.`;
+
+  headerIcon.textContent = action === "beli" ? "📥🔑" : "📤🏦";
+}
+
+
+// Kirim data ke Telegram
 function kirimKeTelegram(text, formElement) {
   const token = "TOKEN_BOT";
   const chat_id = "CHAT_ID";
@@ -150,52 +236,49 @@ function kirimKeTelegram(text, formElement) {
   fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chat_id,
-      text: text,
-      parse_mode: "Markdown",
-    }),
+    body: JSON.stringify({ chat_id, text, parse_mode: "Markdown" }),
   })
-    .then((res) => res.json())
-    .then((data) => {
+    .then(res => res.json())
+    .then(data => {
       if (data.ok) {
         alert("✅ Data berhasil dikirim!");
         formElement.reset();
+        // Reset estimasi setelah reset
+        const estimasi = document.getElementById("estimasiIDR");
+        if (estimasi) estimasi.textContent = `Estimasi IDR: Rp 0`;
       } else {
         alert("❌ Gagal mengirim ke Telegram.");
       }
     })
-    .catch((err) => alert("Error: " + err.message));
+    .catch(err => alert("Error: " + err.message));
 }
 
-// ✅ Loader hide
-window.addEventListener("load", function () {
-  const loader = document.getElementById("loader");
-  if (loader) loader.style.display = "none";
-});
+// Init form & event listener
+function initForm() {
+  const { action, exchange, token, jumlah } = getUrlParams();
+  updateForm({ action, exchange, token, jumlah });
+  updateHeader({ action, exchange, token });
 
-// ✅ Popup Join
-document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById("joinPopup");
-  const content = document.querySelector(".popup-content");
-  const closeBtn = document.getElementById("closePopup");
-  const dontShowBtn = document.getElementById("dontShowAgain");
+  // Event submit form jual
+  const formJual = document.getElementById("form-jual");
+  if (!formJual) return;
 
-  if (popup && content) {
-    if (!localStorage.getItem("hideJoinPopup")) {
-      popup.classList.remove("hidden");
-      setTimeout(() => content.classList.add("show"), 50);
+  formJual.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const jumlahVal = formJual.querySelector("#jumlah")?.value;
+    const bank = formJual.querySelector("#bank")?.value;
+    const norek = formJual.querySelector("#norek")?.value;
+    const nama = formJual.querySelector("#nama")?.value;
+
+    if (!jumlahVal || !bank || !norek || !nama) {
+      alert("❌ Harap isi semua kolom dengan benar!");
+      return;
     }
 
-    function hidePopup() {
-      content.classList.remove("show");
-      setTimeout(() => popup.classList.add("hidden"), 300);
-    }
+    const text = `📤 *PERMINTAAN PENJUALAN*\n\n📊 Pair: ${token}\n💸 Jumlah: ${jumlahVal}\n🏦 Bank: ${bank}\n#️⃣ Rek: ${norek}\n👤 Nama: ${nama}`;
+    kirimKeTelegram(text, formJual);
+  });
+}
 
-    closeBtn?.addEventListener("click", hidePopup);
-    dontShowBtn?.addEventListener("click", () => {
-      localStorage.setItem("hideJoinPopup", "true");
-      hidePopup();
-    });
-  }
-});
+// Jalankan saat DOM siap
+document.addEventListener("DOMContentLoaded", initForm);

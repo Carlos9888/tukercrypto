@@ -142,74 +142,87 @@
 </div>
 
 
-    <!-- Form -->
     <form id="form-jual" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Jumlah -->
-      <div class="col-span-1 md:col-span-2">
-        <label for="jumlah" class="block mb-2 font-semibold">Jumlah USDT/USDC</label>
-        <input type="number" id="jumlah" name="jumlah" min="1" max="100" placeholder="Contoh: 10" 
-               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
-        <p id="estimasiIDR" class="text-sm text-gray-400 mt-1">Estimasi IDR: Rp 0</p>
-      </div>
+  <!-- Hidden inputs otomatis -->
+  <input type="hidden" id="exchange" name="exchange" value="">
+  <input type="hidden" id="token" name="token" value="">
+  <input type="hidden" id="actionType" name="action" value="">
 
-      <!-- Bank / E-wallet -->
+  <!-- Jumlah -->
+  <div class="col-span-1 md:col-span-2">
+    <label for="jumlah" class="block mb-2 font-semibold">Jumlah USDT/USDC</label>
+    <input type="number" id="jumlah" name="jumlah" min="1" max="100" 
+       placeholder="Minimal penarikan 1$" 
+       class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
+    <p id="estimasiIDR" class="text-sm text-gray-400 mt-1">Estimasi IDR: Rp 0</p>
+  </div>
+
+  <!-- Bank / E-wallet -->
 <div class="col-span-1 md:col-span-2">
-  <label for="bank" class="block mb-2 font-semibold text-white">Pilih Bank / E-wallet</label>
-  <select id="bank" name="bank" 
-          class="w-full p-4 rounded-2xl bg-black border border-gray-700 text-white focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
-          size="1" required>
+  <label for="bank" class="block mb-2 font-semibold">Pilih Bank / E-wallet</label>
+  <select id="bank" name="bank"
+          class="w-full p-4 rounded-2xl bg-black border border-gray-700 text-white focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300 appearance-none">
     <option value="" disabled selected>-- Pilih Bank / E-wallet --</option>
-    <option value="BCA">BCA</option>
-    <option value="BNI">BNI</option>
-    <option value="BRI">BRI</option>
-    <option value="MANDIRI">Mandiri</option>
-    <option value="SEABANK">SeaBank</option>
-    <option value="DANA">DANA</option>
-    <option value="OVO">OVO</option>
-    <option value="GOPAY">GoPay</option>
-    <option value="SHOPEEPAY">ShopeePay</option>
+
+    <!-- Bank -->
+    <optgroup label="Bank">
+      <option value="BCA">BCA</option>
+      <option value="BNI">BNI</option>
+      <option value="BRI">BRI</option>
+      <option value="MANDIRI">Mandiri</option>
+      <option value="SEABANK">SeaBank</option>
+    </optgroup>
+
+    <!-- E-wallet -->
+    <optgroup label="E-wallet">
+      <option value="DANA">DANA</option>
+      <option value="OVO">OVO</option>
+      <option value="GOPAY">GoPay</option>
+      <option value="SHOPEEPAY">ShopeePay</option>
+    </optgroup>
   </select>
-  <p class="text-gray-400 text-sm mt-1">Scroll untuk melihat semua pilihan jika diperlukan.</p>
+  <p class="text-gray-400 text-sm mt-1">
+    Pilih rekening bank atau e-wallet yang ingin kamu gunakan untuk menerima pembayaran. Pastikan data sesuai agar transaksi lancar.
+  </p>
 </div>
 
 
-
-      <!-- Nomor Rekening -->
-      <div>
-        <label for="norek" class="block mb-2 font-semibold">Nomor Rekening</label>
-        <input type="text" id="norek" name="norek" placeholder="Contoh: 1234567890" 
-               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
-               required pattern="\d+">
-      </div>
-
-      <!-- Nama Pemilik -->
-      <div>
-        <label for="nama" class="block mb-2 font-semibold">Nama Pemilik Rekening</label>
-        <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" 
-               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
-               required>
-      </div>
-
-      <!-- Email / WA Notifikasi -->
-      <div class="col-span-1 md:col-span-2">
-        <label class="block mb-2 font-semibold">Metode Notifikasi</label>
-        <div class="flex gap-4 mb-3">
-          <button type="button" id="notifEmailBtn" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">Email</button>
-          <button type="button" id="notifWA" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">WhatsApp</button>
-        </div>
-        <input type="text" id="notifInput" name="notif" placeholder="Isi email / WA" 
-               class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
-      </div>
-
-      <!-- Submit -->
-      <div class="col-span-1 md:col-span-2">
-        <button type="submit" 
-                class="w-full bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400 text-white p-4 rounded-2xl font-bold text-lg transition duration-300 shadow-lg hover:shadow-xl">
-          Lanjutkan Penjualan
-        </button>
-      </div>
-    </form>
+  <!-- Nomor Rekening -->
+  <div>
+    <label for="norek" class="block mb-2 font-semibold">Nomor Rekening</label>
+    <input type="text" id="norek" name="norek" placeholder="Contoh: 1234567890" 
+           class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
+           required pattern="\d+">
   </div>
+
+  <!-- Nama Pemilik -->
+  <div>
+    <label for="nama" class="block mb-2 font-semibold">Nama Pemilik Rekening</label>
+    <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" 
+           class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" 
+           required>
+  </div>
+
+  <!-- Email / WA Notifikasi -->
+  <div class="col-span-1 md:col-span-2">
+    <label class="block mb-2 font-semibold">Metode Notifikasi</label>
+    <div class="flex gap-4 mb-3">
+      <button type="button" id="notifEmailBtn" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">Email</button>
+      <button type="button" id="notifWA" class="flex-1 bg-purple-700 hover:bg-purple-600 p-3 rounded-2xl font-semibold transition duration-300">WhatsApp</button>
+    </div>
+    <input type="text" id="notifInput" name="notif" placeholder="Isi email / WA" 
+           class="w-full p-4 rounded-2xl bg-black border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none transition duration-300" required>
+  </div>
+
+  <!-- Submit -->
+  <div class="col-span-1 md:col-span-2">
+    <button type="submit" id="submitBtn" 
+            class="w-full bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400 text-white p-4 rounded-2xl font-bold text-lg transition duration-300 shadow-lg hover:shadow-xl">
+      Lanjutkan Penjualan
+    </button>
+  </div>
+</form>
+</div>
 </section>
 
 
