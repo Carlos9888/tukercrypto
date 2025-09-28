@@ -1,0 +1,7 @@
+# robots.txt untuk TukerCrypto
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://www.tukercrypto.com/sitemap.xml
