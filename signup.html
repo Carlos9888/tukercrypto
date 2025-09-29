@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow">
+  <title>TukerCrypto.com</title>
+ <!-- Favicon universal -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.tukercrypto.com/assets/tc.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://www.tukercrypto.com/assets/tc.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="https://www.tukercrypto.com/assets/tc.png">
+
+  <!-- Windows Tile -->
+  <meta name="msapplication-TileImage" content="https://www.tukercrypto.com/assets/tc.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TukerCrypto",
+    "url": "https://www.tukercrypto.com",
+    "logo": "https://www.tukercrypto.com/assets/logo.png"
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TukerCrypto.com - Transaksi Crypto Tanpa Ribet">
+  <meta property="og:description" content="Tuker USDT, TRX, dan token Web3 langsung ke DANA, OVO, GoPay, atau rekening bank.">
+  <meta property="og:image" content="https://www.tukercrypto.com/assets/logo.png">
+  <meta property="og:url" content="https://www.tukercrypto.com/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TukerCrypto.com - Transaksi Crypto Tanpa Ribet">
+  <meta name="twitter:description" content="Tuker USDT, TRX, dan token Web3 langsung ke DANA, OVO, GoPay, atau rekening bank.">
+  <meta name="twitter:image" content="https://www.tukercrypto.com/assets/logo.png">
+
+  <!-- CSS & Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-black text-white font-sans" data-scroll>
+
+
+  <!-- ✅ HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md p-4">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+  <a href="index.html" class="flex items-center space-x-2">
+    <img src="https://tukercrypto.com/assets/tc.jpg?raw=true" alt="TukerCrypto" class="w-8 h-8 rounded-full">
+    <h1 class="text-base md:text-xl font-bold text-white">TukerCrypto</h1>
+  </a>
+</div>
+
+
+     <!-- Desktop Menu -->
+<nav class="hidden md:flex items-center space-x-4 text-sm md:text-base">
+  <a href="index.html#beranda" class="flex items-center gap-2 hover:underline">
+    <i data-lucide="home" class="w-4 h-4"></i> Beranda
+  </a>
+  <a href="cekpesanan.html" class="flex items-center gap-2 hover:underline">
+    <i data-lucide="search" class="w-4 h-4"></i> Cek Pesanan
+  </a>
+  <a href="index.html#layanan" class="flex items-center gap-2 hover:underline">
+    <i data-lucide="layers" class="w-4 h-4"></i> Layanan
+  </a>
+  <a href="index.html#tentang" class="flex items-center gap-2 hover:underline">
+    <i data-lucide="info" class="w-4 h-4"></i> Tentang
+  </a>
+  <a href="index.html#kontak" class="flex items-center gap-2 hover:underline">
+    <i data-lucide="mail" class="w-4 h-4"></i> Kontak
+  </a>
+  <a href="login.html" class="flex items-center gap-2 bg-black px-3 py-1 rounded hover:bg-gray-800">
+    <i data-lucide="log-in" class="w-4 h-4"></i> Log In
+  </a>
+  <a href="signup.html" class="flex items-center gap-2 bg-purple-700 px-3 py-1 rounded hover:bg-purple-600">
+    <i data-lucide="user-plus" class="w-4 h-4"></i> Sign Up
+  </a>
+</nav>
+
+
+  <!-- ☰ Button (Mobile) -->
+      <button class="md:hidden text-white text-3xl" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- ✅ OVERLAY LAYAR BELAKANG (blur seluruh halaman saat menu muncul) -->
+<div id="overlay" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden transition-opacity duration-300"></div>
+
+<!-- ✅ SLIDE MENU MOBILE (dengan blur background) -->
+<div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full z-50 bg-black/70 backdrop-blur-lg transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-6">
+  <div>
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-xl font-bold text-white">Menu</h2>
+      <button onclick="toggleMenu()" class="text-2xl text-white">✕</button>
+    </div>
+    <nav class="space-y-4">
+      <a href="index.html#beranda" class="flex items-center gap-2 hover:underline text-white">
+        <i data-lucide="home" class="w-4 h-4"></i> Beranda
+      </a>
+      <a href="cekpesanan.html" class="flex items-center gap-2 hover:underline text-white">
+        <i data-lucide="search" class="w-4 h-4"></i> Cek Pesanan
+      </a>
+      <a href="index.html#layanan" class="flex items-center gap-2 hover:underline text-white">
+        <i data-lucide="layers" class="w-4 h-4"></i> Layanan
+      </a>
+      <a href="index.html#tentang" class="flex items-center gap-2 hover:underline text-white">
+        <i data-lucide="info" class="w-4 h-4"></i> Tentang
+      </a>
+      <a href="index.html#kontak" class="flex items-center gap-2 hover:underline text-white">
+        <i data-lucide="mail" class="w-4 h-4"></i> Kontak
+      </a>
+    </nav>
+  </div>
+  <div class="space-y-2 pt-4">
+    <a href="login.html" class="flex items-center gap-2 bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+      <i data-lucide="log-in" class="w-4 h-4"></i> Log In
+    </a>
+    <a href="signup.html" class="flex items-center gap-2 bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-600">
+      <i data-lucide="user-plus" class="w-4 h-4"></i> Sign Up
+    </a>
+  </div>
+</div>
+
+  <!-- SIGN UP FORM -->
+  <main class="flex justify-center items-center min-h-screen px-4 pt-24">
+    <div class="w-full max-w-md bg-gradient-to-r from-black via-[#0f0f2d] to-black bg-opacity-40 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-purple-700">
+      <h2 class="text-2xl font-bold mb-6 text-white text-center">Sign Up</h2>
+      <form action="#" method="POST" class="space-y-4">
+        <div>
+          <label class="block mb-1 text-sm font-semibold">Nama Lengkap</label>
+          <input type="text" name="fullname" placeholder="Masukkan nama lengkap" required
+            class="w-full px-4 py-2 rounded-lg bg-black/50 border border-purple-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-600">
+        </div>
+        <div>
+          <label class="block mb-1 text-sm font-semibold">Email</label>
+          <input type="email" name="email" placeholder="Masukkan email" required
+            class="w-full px-4 py-2 rounded-lg bg-black/50 border border-purple-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-600">
+        </div>
+        <div>
+          <label class="block mb-1 text-sm font-semibold">Password</label>
+          <input type="password" name="password" placeholder="Masukkan password" required
+            class="w-full px-4 py-2 rounded-lg bg-black/50 border border-purple-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-600">
+        </div>
+        <div>
+          <label class="block mb-1 text-sm font-semibold">Konfirmasi Password</label>
+          <input type="password" name="confirm_password" placeholder="Ulangi password" required
+            class="w-full px-4 py-2 rounded-lg bg-black/50 border border-purple-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-600">
+        </div>
+        <button type="submit"
+          class="w-full bg-purple-700 hover:bg-purple-600 text-white py-2 px-4 rounded-lg font-bold mt-2">Daftar Sekarang</button>
+      </form>
+      <p class="mt-4 text-center text-gray-300 text-sm">
+        Sudah punya akun? <a href="login.html" class="text-purple-500 hover:underline">Log In</a>
+      </p>
+    </div>
+  </main>
+
+
+  <!-- ✅ Script lucide taruh di bawah -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const overlay = document.getElementById('overlay');
+      menu.classList.toggle('translate-x-full');
+      overlay.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
