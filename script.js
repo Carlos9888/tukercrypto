@@ -290,3 +290,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Jalankan saat DOM siap
 document.addEventListener("DOMContentLoaded", initForm);
+
+
+// Tutup menu otomatis saat klik link di mobile menu
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileLinks = document.querySelectorAll("#mobileMenu a");
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("overlay");
+
+  mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.add("translate-x-full"); // tutup menu
+      if (overlay) overlay.classList.add("hidden"); // sembunyikan overlay
+    });
+  });
+});
