@@ -1,4 +1,4 @@
-# robots.txt TukerCrypto - versi terbaru
+# robots.txt TukerCrypto - versi terbaru dan bersih
 
 User-agent: *
 # Blok halaman sensitif / admin
