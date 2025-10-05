@@ -1,7 +1,4 @@
-# robots.txt TukerCrypto - versi terbaru dan bersih
-
 User-agent: *
-# Blok halaman sensitif / admin
 Disallow: /admin/
 Disallow: /private/
 Disallow: /login.html
@@ -9,9 +6,5 @@ Disallow: /signup.html
 Disallow: /cekpesanan.html
 Disallow: /config/
 Disallow: /backup/
-
-# Boleh di-crawl semua halaman publik
 Allow: /
-
-# Sitemap
 Sitemap: https://www.tukercrypto.com/sitemap.xml
