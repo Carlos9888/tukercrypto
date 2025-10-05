@@ -288,10 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Jalankan saat DOM siap
-document.addEventListener("DOMContentLoaded", initForm);
-
-
 // Tutup menu otomatis saat klik link di mobile menu
 document.addEventListener("DOMContentLoaded", function () {
   const mobileLinks = document.querySelectorAll("#mobileMenu a");
