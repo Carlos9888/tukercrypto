@@ -2,8 +2,8 @@ const CACHE_NAME = "tukercrypto-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "https://www.tukercrypto.com/assets/tc.png",
-  "https://www.tukercrypto.com/assets/tc.png",
+  "/assets/logo-192.png",
+  "/assets/logo-512.png",
   "/style.css",
   "/script.js"
 ];
