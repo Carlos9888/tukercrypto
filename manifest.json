@@ -1,8 +1,11 @@
 {
   "name": "TukerCrypto",
   "short_name": "TukerCrypto",
-  "start_url": "/index.html",
+  "description": "TukerCrypto adalah layanan tuker crypto ke rupiah yang praktis dan aman, tanpa perlu KYC atau ribet teknis.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#6b21a8",
   "icons": [
