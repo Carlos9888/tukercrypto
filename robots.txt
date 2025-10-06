@@ -1,3 +1,5 @@
+# robots.txt TukerCrypto - versi aman
+
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
@@ -7,4 +9,5 @@ Disallow: /cekpesanan.html
 Disallow: /config/
 Disallow: /backup/
 Allow: /
-Sitemap: https://www.tukercrypto.com/sitemap.xml
+
+Sitemap: https://tukercrypto.com/sitemap.xml
